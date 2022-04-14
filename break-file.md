@@ -1,5 +1,3 @@
 broken!!!!
 
-[Link][1]
-
-[1]: weirdlink.com
+No link to be found here
