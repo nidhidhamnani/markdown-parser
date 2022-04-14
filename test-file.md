@@ -1,4 +1,4 @@
 # Title
 
-[link1](https://something.com)
-[link2](some-thing.html)
+[li]nk1]]](https://something.com))
+[broken]]]][]](some-thing.html)))
