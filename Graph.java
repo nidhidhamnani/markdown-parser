@@ -1,8 +1,4 @@
 import java.util.ArrayList;
-
-import javax.sound.sampled.SourceDataLine;
-import javax.swing.plaf.nimbus.State;
-
 import java.util.*;
 
 public class Graph {
@@ -56,10 +52,6 @@ public class Graph {
 
         HashMap<String,State> neighbors;
         String name;
-
-        public State(HashMap neighborList){
-            neighbors = neighborList;
-        }
 
         public State(String name){
             neighbors = new HashMap<>();
