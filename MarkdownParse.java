@@ -19,14 +19,26 @@ public class MarkdownParse {
 
             int openBrackPrevIndex = openBracket-1;
             System.out.println(markdown.substring(openParen + 1, closeParen));
-            if (openBracket == 0) {
+            
+            if (openBracket == -1 || closeBracket ==-1 || openParen == -1 || closeParen == -1){
+                break;
+            }
+
+            if (openBrackPrevIndex >=0 &&
+            markdown.substring(openBrackPrevIndex, openBracket).equals("!")) {
+                System.out.println("image");
+                // Math.max(openBracket,closeBracket, openParen,closePare/n);
+            }
+            else if (openBracket == 0) {
+                System.out.println("zero");
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
-            else if (openBrackPrevIndex >=0 &&
-            !markdown.substring(openBrackPrevIndex, openBracket).equals("!")) {
+            else if (closeBracket + 1 == openParen) {
+                System.out.println("]( next to eachother");
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
 
+            // Cases gets triggered falsly. ONe is that it might trigger another case while it isn't a link. Faulty
             currentIndex = closeParen + 1;
             System.out.println(currentIndex);
         }
