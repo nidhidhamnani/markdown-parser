@@ -9,6 +9,9 @@ public class Graph {
 
     public Graph(){
         START = new State();
+        currentState = START;
+
+        
     }
 
     private class State{
@@ -21,6 +24,10 @@ public class Graph {
 
         public State(){
 
+        }
+
+        public void moveToNeighbor(String s){
+            
         }
     }
     
