@@ -19,7 +19,9 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            System.out.println(currentindex);
         }
+        System.out.println(currentIndex);
         return toReturn;
 
     }
@@ -34,4 +36,4 @@ public class MarkdownParse {
 }
 
 //scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/
-//ls
+//java MarkdownParse test-file.md
