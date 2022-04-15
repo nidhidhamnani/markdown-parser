@@ -9,6 +9,9 @@ public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
+        if (markdown.indexOf("(") < 0 || markdown.indexOf("[") < 0) {
+            return toReturn;
+        }
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length() - 1) {
