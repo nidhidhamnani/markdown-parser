@@ -1,2 +1,2 @@
 # test
-[link](question().com)
+[link](question[].com)
