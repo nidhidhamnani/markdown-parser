@@ -1,0 +1,2 @@
+# test
+[link](question().com)
