@@ -13,6 +13,11 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
 
+            if (markdown.indexOf("(") == -1 && markdown.indexOf(")") == -1 && markdown.indexOf("[") == -1 && markdown.indexOf("]") == -1){
+                toReturn.add(markdown);
+                return toReturn;
+            }
+
             if (markdown.indexOf("(") == -1 && markdown.indexOf(")") == -1){
                 toReturn.add("");
                 return toReturn;
