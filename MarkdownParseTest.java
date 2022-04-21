@@ -72,6 +72,7 @@ public class MarkdownParseTest {
         MarkdownParse mp = new MarkdownParse();
         ArrayList<String> resultArray = mp.getLinks(Files.readString(Path.of("test-file3.md")));
         assertEquals(expected, resultArray);
+    }
 
     public void testGetLinks1() throws IOException{
         Graph graph = new Graph();
@@ -106,7 +107,7 @@ public class MarkdownParseTest {
     public void testGetLinks5() throws IOException{
         Graph graph = new Graph();
         ArrayList<String> expected = new ArrayList<>();
+        expected.add("hello.com");
         assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break4.md"))));
     }
 }
-
