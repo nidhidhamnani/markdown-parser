@@ -47,6 +47,7 @@ public class MarkdownParseTest {
     public void testGetLinks5() throws IOException{
         Graph graph = new Graph();
         ArrayList<String> expected = new ArrayList<>();
+        expected.add("hello.com");
         assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break4.md"))));
     }
 }
