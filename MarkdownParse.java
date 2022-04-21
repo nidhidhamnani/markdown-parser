@@ -13,6 +13,7 @@ public class MarkdownParse {
         int currentIndex = 0;
         int otherIdx = 0;
         while(currentIndex < markdown.length() - 1) {
+            int exclaimationIdx = markdown.indexOf("!");
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
@@ -28,6 +29,9 @@ public class MarkdownParse {
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             System.out.println(currentIndex);
             currentIndex = closeParen + 1;
+            if(exclaimationIdx + 1 == openBracket){
+                toReturn.remove(toReturn.size() - 1);
+            }
             
         }
         System.out.println(currentIndex);
@@ -41,5 +45,6 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
+        System.out.println("some edit");
     }
 }
