@@ -50,4 +50,60 @@ public class MarkdownParseTest {
       String[] expected = new String[] {"shouldbeidentified.com"};
       assertArrayEquals(expected, links.toArray());
    }
+
+   @Test
+   public void testProvidedTestFile2() throws IOException {
+      String content = readFile("test-file2.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {"https://something.com", "some-page.html"};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile3() throws IOException {
+      String content = readFile("test-file3.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile4() throws IOException {
+      String content = readFile("test-file4.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile5() throws IOException {
+      String content = readFile("test-file5.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile6() throws IOException {
+      String content = readFile("test-file6.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile7() throws IOException {
+      String content = readFile("test-file7.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
+
+   @Test
+   public void testProvidedTestFile8() throws IOException {
+      String content = readFile("test-file8.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
+   }
 }
