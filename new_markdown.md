@@ -1,2 +1,1 @@
-[Link](somethin g.com)
-[Link]( )
+[Link](somethingtem t.com)
