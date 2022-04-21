@@ -1,11 +1,10 @@
 //https://howtodoinjava.com/java/io/java-read-file-to-string-examples/
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Scanner;
 
 public class MarkdownParse {
 
@@ -13,21 +12,23 @@ public class MarkdownParse {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
-        File test = new File("new_markdown.md");
-        Scanner scnr = new Scanner(test);
-        int counter;
-        if (scnr.hasNextLine() == false){
+        Scanner scnr = new Scanner(markdown);
 
-        }
-        
-        while(currentIndex < markdown.length()) {
+        while(scnr.hasNextLine()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
+
+            if (openBracket < 0 || closeBracket < 0 || openParen < 0 || closeParen < 0) {
+                break;
+            }
+
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            scnr.nextLine();
         }
+        scnr.close();
 
         return toReturn;
     }
@@ -37,6 +38,7 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
+        System.out.println("here is the link:");
 	    System.out.println(links);
     }
 }
