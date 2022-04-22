@@ -44,7 +44,7 @@ public class MarkdownParseTest {
     // more tests Part 6 lab 4
     @Test
     public void getLinksTest4() throws IOException {
-        Path fileName = Path.of("lab=test-file2.md");
+        Path fileName = Path.of("lab-test-file2.md");
         String content = Files.readString(fileName);        
         List<String> expectedLinks = List.of("https://something.com", "some-page.html");
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -52,7 +52,7 @@ public class MarkdownParseTest {
     
     @Test
     public void getLinksTest5() throws IOException {
-        Path fileName = Path.of("lab=test-file3.md");
+        Path fileName = Path.of("lab-test-file3.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of();
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -60,7 +60,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksTest6() throws IOException {
-        Path fileName = Path.of("lab=test-file4.md");
+        Path fileName = Path.of("lab-test-file4.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of();
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -68,7 +68,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksTest7() throws IOException {
-        Path fileName = Path.of("lab=test-file5.md");
+        Path fileName = Path.of("lab-test-file5.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of();
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -76,7 +76,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksTest8() throws IOException {
-        Path fileName = Path.of("lab=test-file6.md");
+        Path fileName = Path.of("lab-test-file6.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of("page.com");
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -84,7 +84,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksTest9() throws IOException {
-        Path fileName = Path.of("lab=test-file7.md");
+        Path fileName = Path.of("lab-test-file7.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of();
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
@@ -92,7 +92,7 @@ public class MarkdownParseTest {
 
     @Test
     public void getLinksTest10() throws IOException {
-        Path fileName = Path.of("lab=test-file8.md");
+        Path fileName = Path.of("lab-test-file8.md");
         String content = Files.readString(fileName);
         List<String> expectedLinks = List.of("a link on the first line");
         assertEquals(expectedLinks, MarkdownParse.getLinks(content));
