@@ -16,12 +16,20 @@ public class MarkdownParse {
             if (openBracket == -1) {
                 break;
             }
+
+            //Checks if there is an "!" that denotes an image link before the open bracket and ends the loop if there is.
+            if (openBracket != 0) {
+                if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
+                    break;
+                }
+            }
+            
             int closeBracket = markdown.indexOf("]", openBracket);
             if (closeBracket == -1) {
                 break;
             }
             int openParen = markdown.indexOf("(", closeBracket);
-            if (openParen == -1) {
+            if (openParen == -1 || openParen != closeBracket + 1) {
                 break;
             }
             int closeParen = markdown.indexOf(")", openParen);
