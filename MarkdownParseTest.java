@@ -22,4 +22,34 @@ public class MarkdownParseTest{
         expected.add("some-thing.html");
         assertEquals(expected, links);
     }
+
+    @Test
+    public void testGetLinks2() throws IOException{
+        Path fileName = Path.of("/Users/aliceli/Documents/GitHub/markdown-parser/test-file-2.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<>(); 
+        expected.add("a-");
+        expected.add("https://minesweeperonline.com/#200");
+        assertEquals(expected, links);
+    }
+
+    @Test
+    public void testGetLinks3() throws IOException{
+        Path fileName = Path.of("/Users/aliceli/Documents/GitHub/markdown-parser/test-file-3.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<>();
+        assertEquals(expected, links);
+    }
+
+    @Test
+    public void testGetLinks4() throws IOException{
+        Path fileName = Path.of("/Users/aliceli/Documents/GitHub/markdown-parser/test-file-4.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("https://minesweeperonline.com/#200");
+        assertEquals(expected, links);
+    }
 }
