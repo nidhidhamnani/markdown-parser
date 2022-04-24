@@ -32,11 +32,9 @@ public class MarkdownParse {
         int currentIndex = 0;
         int openBracket;
         while(currentIndex < markdown.length()) {
-            System.out.println(currentIndex);
-
+		
             // Handles edge case where an image tag contains the last open bracket
             if (currentIndex == -1) {
-                System.out.println("searched item not found. exiting");
                 break;
             }
             // Fix for infinite loop caused by empty last line
