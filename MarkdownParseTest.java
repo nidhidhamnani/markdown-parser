@@ -28,4 +28,13 @@ public class MarkdownParseTest {
         assertEquals(exp, act);
     }
 
+    @Test
+    public void testImage() throws IOException {
+        List<String> exp = List.of("https://www.google.com/?client=safari", "https://github.com/AngeliaZddl/markdown-parser");
+        Path file = Path.of("testImage.md");
+        String content = Files.readString(file);
+        ArrayList<String> act = MarkdownParse.getLinks(content);
+        assertEquals(exp, act);
+    }
+
 }
