@@ -33,6 +33,8 @@ public class MarkdownParse {
                     currentIndex = closeParen + 1;
                 }
             }
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            currentIndex = closeParen + 1;
             // System.out.println(currentIndex);
         }
         // System.out.println(toReturn);
