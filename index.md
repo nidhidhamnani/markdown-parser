@@ -24,7 +24,7 @@ Before the change, the code cannot test the image while it's in the test file. T
 # Second Code Changes
 ### Screenshot of the code change
 
-
+![Second Changes](SecondChanges.png)
 
 ### Link to the test file
 
@@ -45,6 +45,8 @@ Before the change, the code cannot skip the empty links so I add a if condition 
 
 # Third Code Changes
 ### Screenshot of the code change
+
+![Third Change]()
 
 ### Link to the test file
 
