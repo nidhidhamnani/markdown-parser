@@ -46,7 +46,7 @@ Before the change, the code cannot skip the empty links so I add a if condition 
 # Third Code Changes
 ### Screenshot of the code change
 
-![Third Change]()
+![Third Change](ThirdChanges.png)
 
 ### Link to the test file
 
@@ -70,4 +70,4 @@ Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
 
 ### Description
 
-Before the change, the code cannot run if the link is in a pair of brackets. However the link in a pair of brackets is alse a link so we are supposed to return it in the output. To fix this symptom, 
+Before the change, the code will run an error if there is only an open bracket following the last link. However we are supposed to return the links before that in the output. To fix this symptom, I add a if condition to check if there is a close bracket following the open bracket.

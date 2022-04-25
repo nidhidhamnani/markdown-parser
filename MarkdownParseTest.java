@@ -30,8 +30,26 @@ public class MarkdownParseTest {
 
     @Test
     public void testImage() throws IOException {
-        List<String> exp = List.of("https://www.google.com/?client=safari", "https://github.com/AngeliaZddl/markdown-parser");
+        ArrayList<String> exp = new ArrayList<String>();
         Path file = Path.of("testImage.md");
+        String content = Files.readString(file);
+        ArrayList<String> act = MarkdownParse.getLinks(content);
+        assertEquals(exp, act);
+    }
+
+    @Test
+    public void testParen() throws IOException {
+        List<String> exp = List.of("https://angeliazddl.github.io/markdown-parser/");
+        Path file = Path.of("testParen.md");
+        String content = Files.readString(file);
+        ArrayList<String> act = MarkdownParse.getLinks(content);
+        assertEquals(exp, act);
+    }
+
+    @Test
+    public void testBracket() throws IOException {
+        List<String> exp = List.of("https://angeliazddl.github.io/markdown-parser/");
+        Path file = Path.of("testBracket.md");
         String content = Files.readString(file);
         ArrayList<String> act = MarkdownParse.getLinks(content);
         assertEquals(exp, act);
