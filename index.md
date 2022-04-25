@@ -17,7 +17,7 @@ Actual output before make changes:
 
 ### Description
 
-Before the change, the code cannot test the image while it's in the test file. The image is not a link so we are supposed to not show it in the output. I add a if condition to check if targeted links are iamges.
+Before the change, the code cannot test the image while it's in the test file. The image is not a link so we are supposed to not show it in the output. I add a if condition to check if the targeted link is an iamge.
 
 # Second Code Changes
 ### Screenshot of the code change
