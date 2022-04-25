@@ -10,12 +10,18 @@
 ### The Symptom
 
 Expect output:
-
-`[]`
+```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testImage.md
+[]
+```
 
 Actual output before make changes:
-
-`[sunset.jpg]`
+```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testImage.md
+[sunset.jpg]
+```
 
 ### Description
 
@@ -32,16 +38,22 @@ Before the change, the code cannot test the image while it's in the test file. T
 
 ### The Symptom
 Expect output:
-
-`[https://angeliazddl.github.io/markdown-parser/]`
+```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java       
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testParen.md
+[https://angeliazddl.github.io/markdown-parser/]
+```
 
 Actual output:
-
-`[, https://angeliazddl.github.io/markdown-parser/]`
+```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java       
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testParen.md
+[, https://angeliazddl.github.io/markdown-parser/]
+```
 
 ### Description
 
-Before the change, the code cannot skip the empty links so I add a if condition to check if the link is empty with nothing in parens.
+Before the change, the code cannot skip the empty links. I add a if condition to check if the link is empty, which means nothing in parens.
 
 # Third Code Changes
 ### Screenshot of the code change
@@ -55,12 +67,17 @@ Before the change, the code cannot skip the empty links so I add a if condition 
 ### The Symptom
 
 Expect output:
-
-`[https://angeliazddl.github.io/markdown-parser/]`
+```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java       
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testBracket.md
+[https://angeliazddl.github.io/markdown-parser/]
+```
 
 Actual output:
 
 ```
+angeliaz@MacBook-Pro markdown-parser % javac MarkdownParse.java       
+angeliaz@MacBook-Pro markdown-parser % java MarkdownParse testBracket.md
 Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
         at java.base/java.lang.StringLatin1.newString(StringLatin1.java:766)
         at java.base/java.lang.String.substring(String.java:2708)
