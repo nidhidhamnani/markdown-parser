@@ -1,9 +1,11 @@
 # First Code Changes
 ### Screenshot of the code change
 
+![First Changes](FirstChanges.png)
+
 ### Link to the test file
 
-[testImage](https://angeliazddl.github.io/markdown-parser/testImage.html)
+[testImage.md](https://angeliazddl.github.io/markdown-parser/testImage.html)
 
 ### The Symptom
 
@@ -22,9 +24,11 @@ Before the change, the code cannot test the image while it's in the test file. T
 # Second Code Changes
 ### Screenshot of the code change
 
+
+
 ### Link to the test file
 
-[testParen](https://angeliazddl.github.io/markdown-parser/testParen.html)
+[testParen.md](https://angeliazddl.github.io/markdown-parser/testParen.html)
 
 ### The Symptom
 Expect output:
@@ -44,7 +48,7 @@ Before the change, the code cannot skip the empty links so I add a if condition 
 
 ### Link to the test file
 
-[testBracket](https://angeliazddl.github.io/markdown-parser/testBracket.html)
+[testBracket.md](https://angeliazddl.github.io/markdown-parser/testBracket.html)
 
 ### The Symptom
 
