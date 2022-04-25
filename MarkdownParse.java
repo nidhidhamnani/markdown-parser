@@ -20,6 +20,9 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            if(markdown.substring(currentIndex).isBlank() && currentIndex !=0){
+                break;
+            }
         }
         return toReturn;
 
