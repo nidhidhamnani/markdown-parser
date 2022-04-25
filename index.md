@@ -9,11 +9,11 @@
 
 Expect output:
 
-`[https://www.google.com/?client=safari, https://github.com/AngeliaZddl/markdown-parser, https://angeliazddl.github.io/markdown-parser/]`
+`[]`
 
 Actual output before make changes:
 
-`[https://www.google.com/?client=safari, https://github.com/AngeliaZddl/markdown-parser, sunset.jpg, https://angeliazddl.github.io/markdown-parser/]`
+`[sunset.jpg]`
 
 ### Description
 
@@ -55,18 +55,11 @@ Expect output:
 Actual output:
 
 ```
-Exception in thread "main" java.lang.StringIndexOutOfBoundsException: Range [0, -1) out of bounds for length 66
-        at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:55)
-        at java.base/jdk.internal.util.Preconditions$1.apply(Preconditions.java:52)
-        at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:213)
-        at java.base/jdk.internal.util.Preconditions$4.apply(Preconditions.java:210)
-        at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:98)
-        at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckFromToIndex(Preconditions.java:112)
-        at java.base/jdk.internal.util.Preconditions.checkFromToIndex(Preconditions.java:349)
-        at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4589)
-        at java.base/java.lang.String.substring(String.java:2703)
-        at MarkdownParse.getLinks(MarkdownParse.java:21)
-        at MarkdownParse.main(MarkdownParse.java:33)
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.lang.StringLatin1.newString(StringLatin1.java:766)
+        at java.base/java.lang.String.substring(String.java:2708)
+        at MarkdownParse.getLinks(MarkdownParse.java:19)
+        at MarkdownParse.main(MarkdownParse.java:30)
 ```
 
 ### Description
