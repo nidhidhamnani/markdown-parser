@@ -13,6 +13,10 @@ public class MarkdownParse {
         int currentIndex = 0;
 
         while(currentIndex < markdown.length()) {
+            if(markdown.indexOf("[") == -1){
+                //if a [ is not found, meaning no websites
+                break;
+            }
             int openBracket = markdown.indexOf("[", currentIndex);
             int closeBracket = markdown.indexOf("]", openBracket);
             int openParen = markdown.indexOf("(", closeBracket);
@@ -21,9 +25,9 @@ public class MarkdownParse {
             currentIndex = closeParen + 1;
             if(markdown.substring(currentIndex).isBlank() && currentIndex != 0){
                 break;
+                //if the file has no more websites but remaining space
             }
         }
-        System.out.println(currentIndex);
         return toReturn;
 
     }
@@ -33,7 +37,13 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
-	    System.out.println(links);
+        if(links.isEmpty()){
+            System.out.println("");
+            // if the link provided is empty it prints nothing
+        }else{
+   	        System.out.println(links);         
+        }
+
     }
 }
 
