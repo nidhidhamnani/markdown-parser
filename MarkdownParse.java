@@ -23,6 +23,11 @@ public class MarkdownParse {
 
             if(openBracket == -1 || openParen == -1 || closeParen == -1){
                 break;
+            } else if( ExMark == openBracket -1){
+                currentIndex = openBracket +1;
+            }
+            else{
+                toReturn.add(markdown.substring(openParen +1, closeParen));
             }
         }
         return toReturn;
