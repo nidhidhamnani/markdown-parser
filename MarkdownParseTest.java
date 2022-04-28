@@ -13,7 +13,7 @@ public class MarkdownParseTest {
    }
 
    public String readFile(String file) throws IOException {
-      String fullPath = "C:/Users/Helen/Desktop/CSE15L/markdown-parser/" + file;
+      String fullPath = file;
       Path fileName = Path.of(fullPath);
       String content = Files.readString(fileName);
       return content;  
