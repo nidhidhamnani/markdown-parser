@@ -31,7 +31,7 @@ public class MarkdownParseTest {
     @Test
     public void testImage() throws IOException {
         ArrayList<String> exp = new ArrayList<String>();
-        Path file = Path.of("testImage.md");
+        Path file = Path.of("/Users/angeliaz/Documents/GitHub/markdown-parser/testImage.md");
         String content = Files.readString(file);
         ArrayList<String> act = MarkdownParse.getLinks(content);
         assertEquals(exp, act);
@@ -40,7 +40,7 @@ public class MarkdownParseTest {
     @Test
     public void testParen() throws IOException {
         List<String> exp = List.of("https://angeliazddl.github.io/markdown-parser/");
-        Path file = Path.of("testParen.md");
+        Path file = Path.of("/Users/angeliaz/Documents/GitHub/markdown-parser/testParen.md");
         String content = Files.readString(file);
         ArrayList<String> act = MarkdownParse.getLinks(content);
         assertEquals(exp, act);
@@ -49,7 +49,7 @@ public class MarkdownParseTest {
     @Test
     public void testBracket() throws IOException {
         List<String> exp = List.of("https://angeliazddl.github.io/markdown-parser/");
-        Path file = Path.of("testBracket.md");
+        Path file = Path.of("/Users/angeliaz/Documents/GitHub/markdown-parser/testBracket.md");
         String content = Files.readString(file);
         ArrayList<String> act = MarkdownParse.getLinks(content);
         assertEquals(exp, act);
