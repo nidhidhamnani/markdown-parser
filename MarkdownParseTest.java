@@ -114,4 +114,10 @@ public class MarkdownParseTest {
       String[] expected = new String[] {};
       assertArrayEquals(expected, links.toArray());
    }
+   @Test
+      public void testProvidedTest9() throws IOException {
+      String content = readFile("test-file9.md");
+      ArrayList<String> links = MarkdownParse.getLinks(content);
+      String[] expected = new String[] {};
+      assertArrayEquals(expected, links.toArray());
 }
