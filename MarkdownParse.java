@@ -29,14 +29,12 @@ public class MarkdownParse {
 
             otherIdx = currentIndex;
             toReturn.add(markdown.substring(openParen + 1, closeParen));
-            System.out.println(currentIndex);
             currentIndex = closeParen + 1;
             if(exclaimationIdx + 1 == openBracket){
                 toReturn.remove(toReturn.size() - 1);
             }
             
         }
-        System.out.println(currentIndex);
 
         return toReturn;
     }
@@ -47,7 +45,5 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         Graph graph = new Graph();
         ArrayList<String> links = graph.getLinks(content);
-	    System.out.println(links);
-        System.out.println("some edit");
     }
 }
