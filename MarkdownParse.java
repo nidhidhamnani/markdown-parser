@@ -19,13 +19,13 @@ public class MarkdownParse {
 
             int openBrackPrevIndex = openBracket-1;
             // System.out.println(markdown.substring(openParen + 1, closeParen));
-            
+            // check if escape character
             if (openBracket == -1 || closeBracket ==-1 || openParen == -1 || closeParen == -1){
                 break;
             }
 
-            if (openBrackPrevIndex >=0 &&
-            markdown.substring(openBrackPrevIndex, openBracket).equals("!")) {
+            if (openBrackPrevIndex >=0 && (
+            markdown.substring(openBrackPrevIndex, openBracket).equals("!") || markdown.substring(openBrackPrevIndex, openBracket).equals("\\"))) {
                 // System.out.println("image");
                 // Math.max(openBracket,closeBracket, openParen,closePare/n);
             }
