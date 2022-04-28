@@ -30,6 +30,7 @@ public class MarkdownParse {
                 // Math.max(openBracket,closeBracket, openParen,closePare/n);
             }
             else if (openBracket+1 == closeBracket) {}
+            else if (openParen + 1 == closeParen) {}
             else if (openBracket == 0) {
                 System.out.println("zero");
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
