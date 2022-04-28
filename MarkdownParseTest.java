@@ -22,7 +22,7 @@ public class MarkdownParseTest {
     @Test
     public void testParse() throws IOException {
         List<String> exp = List.of("https://something.com", "some-thing.html");
-        Path file = Path.of("test-file.md");
+        Path file = Path.of("/Users/angeliaz/Documents/GitHub/markdown-parser/test-file.md");
         String content = Files.readString(file);
         ArrayList<String> act = MarkdownParse.getLinks(content);
         assertEquals(exp, act);
