@@ -6,11 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 
-import java.util.ArrayList;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
 public class MarkdownParseTest {
 
     @Test
@@ -111,3 +106,4 @@ public class MarkdownParseTest {
         assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break4.md"))));
     }
 }
+
