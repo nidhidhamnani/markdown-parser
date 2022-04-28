@@ -120,4 +120,5 @@ public class MarkdownParseTest {
       ArrayList<String> links = MarkdownParse.getLinks(content);
       String[] expected = new String[] {};
       assertArrayEquals(expected, links.toArray());
+   }
 }
