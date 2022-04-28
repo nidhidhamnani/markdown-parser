@@ -25,7 +25,7 @@ public class MarkdownParse {
             }
 
             if (openBrackPrevIndex >=0 && (
-            markdown.substring(openBrackPrevIndex, openBracket).equals("!") || markdown.substring(openBrackPrevIndex, openBracket).equals("\\"))) {
+            markdown.substring(openBrackPrevIndex, openBracket).equals("!")) {
                 // System.out.println("image");
                 // Math.max(openBracket,closeBracket, openParen,closePare/n);
             }
