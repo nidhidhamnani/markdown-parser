@@ -22,6 +22,11 @@ public class MarkdownParse {
                 return toReturn;
             }
             
+            // checks format []()
+            if (closeBracket + 1 != openParen) {
+                return toReturn;
+            }
+            
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
