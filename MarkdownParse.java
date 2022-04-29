@@ -18,9 +18,11 @@ public class MarkdownParse {
             }
 
             //Checks if there is an "!" that denotes an image link before the open bracket and ends the loop if there is.
+            
             if (openBracket != 0) {
                 if (markdown.substring(openBracket - 1, openBracket).equals("!")) {
-                    break;
+                    currentIndex = openBracket + 1;
+                    continue;
                 }
             }
             
@@ -29,24 +31,20 @@ public class MarkdownParse {
                 break;
             }
             int openParen = markdown.indexOf("(", closeBracket);
+           
             if (openParen == -1 || openParen != closeBracket + 1) {
                 break;
             }
+            
             int closeParen = markdown.indexOf(")", openParen);
+
+            
             if (closeParen == -1) {
                 break;
             }
+            
             toReturn.add(markdown.substring(openParen + 1, closeParen));
 
-            /*
-            int checker = markdown.indexOf("[", closeParen);
-            if (checker == -1) {
-                break;
-            }
-            else if (markdown.indexOf("]", checker) == -1) {
-                break;
-            }
-            */
             currentIndex = closeParen + 1;
         }
         //41, 67
@@ -60,6 +58,5 @@ public class MarkdownParse {
         String content = Files.readString(fileName);
         ArrayList<String> links = getLinks(content);
 	    System.out.println(links);
-        System.out.println("finished");
     }
 }
