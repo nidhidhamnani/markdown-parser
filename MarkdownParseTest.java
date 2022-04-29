@@ -103,8 +103,6 @@ public class MarkdownParseTest {
         Path fileName = Path.of("./testfiles/test-file9.md");
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
-        ArrayList<String> test = new ArrayList<>();
-        test.add("");
-        assertEquals(test, links);
+        assertEquals(List.of(), links);
     }
 }
