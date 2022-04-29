@@ -26,4 +26,4 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Test
-        run: mvn -B test --file test-file3.md
+        run: file test-file3.md
