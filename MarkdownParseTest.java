@@ -98,4 +98,11 @@ public class MarkdownParseTest {
         ArrayList<String> links = MarkdownParse.getLinks(content);
         assertEquals(List.of("a link on the first line"), links);
     }
+    @Test
+    public void fileNotHere() throws IOException {
+        Path fileName = Path.of("./testfiles/test-file9.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of(""), links);
+    }
 }
