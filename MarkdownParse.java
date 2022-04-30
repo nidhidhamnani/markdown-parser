@@ -21,7 +21,7 @@ public class MarkdownParse {
                 toReturn.add(markdown);
                 return toReturn;
             }
-
+            //new comment haha
             if (markdown.indexOf("(") == -1 && markdown.indexOf(")") == -1){
                 toReturn.add("");
                 return toReturn;
