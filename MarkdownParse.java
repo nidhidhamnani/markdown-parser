@@ -14,6 +14,10 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
 
             if (markdown.indexOf("(") == -1 && markdown.indexOf(")") == -1 && markdown.indexOf("[") == -1 && markdown.indexOf("]") == -1){
+                if (markdown.indexOf("#") == 0){
+                    toReturn.add("");
+                    return toReturn;
+                }
                 toReturn.add(markdown);
                 return toReturn;
             }
