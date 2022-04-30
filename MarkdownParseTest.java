@@ -53,4 +53,14 @@ public class MarkdownParseTest{
         expected.add("https://minesweeperonline.com/#200");
         assertEquals(expected, links);
     }
+
+    @Test
+    public void testGetLinks5() throws IOException{
+        Path fileName = Path.of("test-file-5.md");
+        String content = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("a-))");
+        assertEquals(expected, links);
+    }
 }
