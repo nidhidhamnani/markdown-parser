@@ -29,7 +29,7 @@ public class MarkdownParseTest{
         String content = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(content);
         ArrayList<String> expected = new ArrayList<>(); 
-        expected.add("a-");
+        expected.add("a-)");
         expected.add("https://minesweeperonline.com/#200");
         assertEquals(expected, links);
     }
