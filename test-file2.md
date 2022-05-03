@@ -1,1 +1,1 @@
-Link(somethingtem t.com)
+[Link](somethingting.com)
