@@ -90,6 +90,7 @@ public class MarkdownParseTest {
         Graph graph = new Graph();
         ArrayList<String> expected = new ArrayList<>();
         assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break3.md"))));
+        
     }
 
     // @Test
