@@ -44,7 +44,7 @@ public class MarkdownParse {
         Path fileName = Path.of(args[0]);
         String content = Files.readString(fileName);
         Graph graph = new Graph();
-        ArrayList<String> links = graph.getLinks(content);
+        ArrayList<String> links = getLinks(content);
         System.out.println(links);
     }
 }
