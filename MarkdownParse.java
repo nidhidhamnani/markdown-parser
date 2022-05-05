@@ -46,5 +46,6 @@ public class MarkdownParse {
         Graph graph = new Graph();
         ArrayList<String> links = graph.getLinks(content);
         System.out.println(links);
+        //some changes
     }
 }
