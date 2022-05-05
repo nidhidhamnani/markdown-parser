@@ -8,37 +8,35 @@ import java.util.ArrayList;
 public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
-        Graph graph = new Graph();
-        return graph.getLinks(markdown);
-        // ArrayList<String> toReturn = new ArrayList<>();
-        // // find the next [, then find the ], then find the (, then read link upto next )
-        // int currentIndex = 0;
-        // int otherIdx = 0;
-        // while(currentIndex < markdown.length() - 1) {
-        //     int exclaimationIdx = markdown.indexOf("!");
-        //     int openBracket = markdown.indexOf("[", currentIndex);
-        //     int closeBracket = markdown.indexOf("]", openBracket);
-        //     int openParen = markdown.indexOf("(", closeBracket);
-        //     int closeParen = markdown.indexOf(")", openParen);
+        ArrayList<String> toReturn = new ArrayList<>();
+        // find the next [, then find the ], then find the (, then read link upto next )
+        int currentIndex = 0;
+        int otherIdx = 0;
+        while(currentIndex < markdown.length() - 1) {
+            int exclaimationIdx = markdown.indexOf("!");
+            int openBracket = markdown.indexOf("[", currentIndex);
+            int closeBracket = markdown.indexOf("]", openBracket);
+            int openParen = markdown.indexOf("(", closeBracket);
+            int closeParen = markdown.indexOf(")", openParen);
             
-        //     if (openParen == -1 || closeParen == -1){
-        //         break;
-        //     }
+            if (openParen == -1 || closeParen == -1){
+                break;
+            }
 
-        //     if (otherIdx > currentIndex){
-        //         break;
-        //     }
+            if (otherIdx > currentIndex){
+                break;
+            }
 
-        //     otherIdx = currentIndex;
-        //     toReturn.add(markdown.substring(openParen + 1, closeParen));
-        //     currentIndex = closeParen + 1;
-        //     if(exclaimationIdx + 1 == openBracket){
-        //         toReturn.remove(toReturn.size() - 1);
-        //     }
+            otherIdx = currentIndex;
+            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            currentIndex = closeParen + 1;
+            if(exclaimationIdx + 1 == openBracket){
+                toReturn.remove(toReturn.size() - 1);
+            }
             
-        // }
+        }
 
-        // return toReturn;
+        return toReturn;
     }
 
 
