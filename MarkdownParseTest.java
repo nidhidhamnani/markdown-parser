@@ -90,16 +90,16 @@ public class MarkdownParseTest {
         Graph graph = new Graph();
         ArrayList<String> expected = new ArrayList<>();
         assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break3.md"))));
-        
+
     }
 
-    // @Test
-    // public void testGetLinks5() throws IOException{
-    //     Graph graph = new Graph();
-    //     ArrayList<String> expected = new ArrayList<>();
-    //     expected.add("hello.com");
-    //     assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break4.md"))));
-    // }
+    @Test
+    public void testGetLinks5() throws IOException{
+        Graph graph = new Graph();
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("hello.com");
+        assertEquals(expected, graph.getLinks(Files.readString(Path.of("test-file-break4.md"))));
+    }
 }
 
 // javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java MarkdownParse.java
