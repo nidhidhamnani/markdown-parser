@@ -1,4 +1,4 @@
-# Makefile for MarkdownParse
+# Makefile for MarkdownParse Final version
 
 Graph.class: Graph.java
 	javac Graph.java
