@@ -1,5 +1,7 @@
 # Makefile for MarkdownParse
 
+Graph.class: Graph.java
+	javac Graph.java
 # Step 1: make MarkdownParse.class
 MarkdownParse.class: MarkdownParse.java
 	javac MarkdownParse.java
