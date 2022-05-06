@@ -1,6 +1,4 @@
 # Title
 
-[a link!](https://something.com)
-[another link!](some-page.html)
-
-some paragraph text after the links
+[link1]very-far-apart(https://something.com) 
+[link2](some-thing.html)
