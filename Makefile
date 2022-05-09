@@ -1,9 +1,9 @@
-# Makefile for MarkdownParse
+# Makefile for MarkdownParse Final version
 
 Graph.class: Graph.java
 	javac Graph.java
 # Step 1: make MarkdownParse.class
-MarkdownParse.class: MarkdownParse.java
+MarkdownParse.class: MarkdownParse.java Graph.class
 	javac MarkdownParse.java
 
 # Step 2: make MarkdownParseTest.class
