@@ -1,4 +1,4 @@
-// import the set of assertEquals
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-// import JUnit core classes and annotations
+
 import org.junit.*;
 
 public class MarkdownParseTest {
-    // “@Test” is an annotation to declare that the class below this part is a test.
+
     @Test
     public void addition() {
         // “assertEquals()” has two arguments. Will pass if the first arguement 
