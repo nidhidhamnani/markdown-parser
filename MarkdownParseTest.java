@@ -11,7 +11,7 @@ public class MarkdownParseTest {
     @Test
     public void testFile1() throws IOException {
         String contents= Files.readString(Path.of("./test-file.md"));
-        List<String> expect = List.of("https://something.com", "some-page.html");
+        List<String> expect = List.of("https://something.com", "some-thing.html");
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
 
@@ -19,13 +19,6 @@ public class MarkdownParseTest {
     public void testFile2() throws IOException {
         String contents= Files.readString(Path.of("./test-file2.md"));
         List<String> expect = List.of("https://something.com", "some-page.html");
-        assertEquals(MarkdownParse.getLinks(contents), expect);
-    }
-
-    @Test
-    public void testSingleImage() throws IOException {
-        String contents= Files.readString(Path.of("./test-single-image.md"));
-        List<String> expect = List.of();
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
 
@@ -42,15 +35,31 @@ public class MarkdownParseTest {
         List<String> expect = List.of();
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
+
     @Test
     public void testSpaceAfterParen() {
         String contents = "[title]( space-in-url.com)";
         List<String> expect = List.of("space-in-url.com");
         assertEquals(expect, MarkdownParse.getLinks(contents));
     }
+
     @Test
     public void testSpaceBeforeParen() {
         String contents = "[title]   (should-not-count.com)";
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+    }
+
+    @Test
+    public void testNestedParens() throws IOException {
+        String contents = Files.readString(Path.of("test-parens-inside-link.md"));
+        List<String> expect = List.of("something.com()", "something.com((()))", "something.com", "boring.com");
+        assertEquals(expect, MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void testMissingCloseParen() {
+        String contents= "[link title](a.com";
         List<String> expect = List.of();
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
