@@ -60,7 +60,7 @@ public class MarkdownParseTest {
     @Test
     public void testMissingCloseParen() throws IOException {
         String contents = Files.readString(Path.of("test-missing-paren-plus-test-file2.md"));
-        List<String> expect = List.of();
+        List<String> expect = List.of("https://something.com", "some-page.html");
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
     
