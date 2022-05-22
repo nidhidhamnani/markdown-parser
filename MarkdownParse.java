@@ -17,13 +17,18 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", closeBracket);
             int closeParen = markdown.indexOf(")", openParen);
             int exclamation = markdown.indexOf("!", currentIndex);
+            int backtick = markdown.indexOf("`", currentIndex);
             int innerParen = markdown.indexOf("(", openParen+1);
             if (innerParen > openParen && innerParen < closeParen){
                 closeParen++;
                 currentIndex = closeParen + 1;
                 continue;
             }
-            if (exclamation >= currentIndex && exclamation < openBracket){
+            if (exclamation >= currentIndex && exclamation == openBracket - 1){
+                currentIndex = closeParen + 1;
+                continue;
+            }
+            if (backtick >= currentIndex && backtick == openBracket - 1){
                 currentIndex = closeParen + 1;
                 continue;
             }
@@ -31,7 +36,7 @@ public class MarkdownParse {
                 openParen == -1 || closeParen == -1){
                     break;
                 }
-            if (closeBracket + 1 != openParen){
+            if (markdown.charAt(openParen-1) != markdown.charAt(closeBracket)){
                 currentIndex = closeParen + 1;
                 continue;
             }    
