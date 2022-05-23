@@ -22,7 +22,6 @@ public class MarkdownParse {
                 return toReturn;
             }
             
-            // checks format []()
             if (closeBracket + 1 != openParen) {
                 return toReturn;
             }
