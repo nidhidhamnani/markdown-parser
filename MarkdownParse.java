@@ -22,7 +22,6 @@ public class MarkdownParse {
                 return toReturn;
             }
             
-            // checks format []()
             if (closeBracket + 1 != openParen) {
                 return toReturn;
             }
@@ -32,7 +31,6 @@ public class MarkdownParse {
         }
         return toReturn;
     }
-//
 
     public static void main(String[] args) throws IOException {
         Path fileName = Path.of(args[0]);
