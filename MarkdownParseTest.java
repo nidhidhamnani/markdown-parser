@@ -18,6 +18,11 @@ public class MarkdownParseTest {
     }
 
     @Test
+    public void subtraction() {
+	assertEquals(0, 1 - 1);
+    }
+
+    @Test
     public void getLinksTest1() throws IOException {
         Path fileName = Path.of("test-file.md");
         String content = Files.readString(fileName);
